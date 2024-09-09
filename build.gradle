@@ -28,6 +28,11 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     compileOnly 'org.projectlombok:lombok'
 //    runtimeOnly 'com.mysql:mysql-connector-j'
+
+    // slack 의존성 추가
+    implementation 'com.slack.api:slack-api-client:1.42.0'
+    implementation 'com.slack.api:slack-api-model:1.42.0'
+
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
