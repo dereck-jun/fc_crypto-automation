@@ -1,6 +1,6 @@
 package com.fc_cryptoautomation.batch;
 
-import com.fc_cryptoautomation.service.UpBitSlackService;
+import com.fc_cryptoautomation.service.UpbitSlackService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
@@ -19,7 +19,7 @@ import java.util.Map;
 @RequiredArgsConstructor
 public class TickerSlackJobConfig {
 
-    private final UpBitSlackService upBitSlackService;
+    private final UpbitSlackService upbitSlackService;
 
     @Bean
     public Job tickerSlackJob(JobRepository jobRepository, Step step) {
@@ -41,7 +41,7 @@ public class TickerSlackJobConfig {
             Map<String, Object> jobParameters = chunkContext.getStepContext().getJobParameters();
             String market = String.valueOf(jobParameters.get("market").toString());
 
-            upBitSlackService.execute(market);
+            upbitSlackService.execute(market);
 
             return RepeatStatus.FINISHED;
         });

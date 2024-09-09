@@ -12,11 +12,11 @@ import java.util.List;
 
 @Component
 @RequiredArgsConstructor
-public class UpBitHttpClient {
+public class UpbitHttpClient {
 
     private final HttpClient httpClient;
 
-    public UpBitTickerDto getTickerByMarket(String market) {
+    public UpbitTickerDto getTickerByMarket(String market) {
         try {
             HttpHeaders httpHeaders = new HttpHeaders();
             httpHeaders.add("accept", "application/json");
@@ -30,7 +30,7 @@ public class UpBitHttpClient {
             ObjectMapper mapper = new ObjectMapper();
             return mapper.readValue(
                     execute,
-                    new TypeReference<List<UpBitTickerDto>>() {
+                    new TypeReference<List<UpbitTickerDto>>() {
                     }
             ).stream().findFirst().get();
         } catch (JsonProcessingException e) {

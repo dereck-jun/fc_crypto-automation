@@ -1,6 +1,6 @@
 package com.fc_cryptoautomation.http;
 
-import com.fc_cryptoautomation.exception.UpBitClientException;
+import com.fc_cryptoautomation.exception.UpbitClientException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpEntity;
@@ -24,7 +24,7 @@ public class HttpClient {
                     new ParameterizedTypeReference<String>() {}
             ).getBody();
         } catch (RestClientException e) {
-            throw new UpBitClientException(e.getMessage());
+            throw new UpbitClientException(e.getMessage());
         }
     }
 }

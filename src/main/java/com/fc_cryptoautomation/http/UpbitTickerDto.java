@@ -3,7 +3,7 @@ package com.fc_cryptoautomation.http;
 import lombok.Getter;
 
 @Getter
-public class UpBitTickerDto {
+public class UpbitTickerDto {
     private String market;
     private String trade_date;
     private String trade_time;
