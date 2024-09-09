@@ -1,23 +1,23 @@
 package com.fc_cryptoautomation.service;
 
 import com.fc_cryptoautomation.http.SlackHttpClient;
-import com.fc_cryptoautomation.http.UpBitHttpClient;
-import com.fc_cryptoautomation.http.UpBitTickerDto;
+import com.fc_cryptoautomation.http.UpbitHttpClient;
+import com.fc_cryptoautomation.http.UpbitTickerDto;
 import com.fc_cryptoautomation.repository.ReportHistoryRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class UpBitSlackService {
+public class UpbitSlackService {
 
     private final SlackHttpClient slackHttpClient;
-    private final UpBitHttpClient upBitHttpClient;
+    private final UpbitHttpClient upbitHttpClient;
     private final ReportHistoryRepository reportHistoryRepository;
 
     public void execute(String market) {
         // upbit
-        UpBitTickerDto tickerByMarket = upBitHttpClient.getTickerByMarket(market);
+        UpbitTickerDto tickerByMarket = upbitHttpClient.getTickerByMarket(market);
 
         // slack
         StringBuilder sb = new StringBuilder();
