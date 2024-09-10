@@ -9,7 +9,7 @@ import java.io.IOException;
 @Component
 public class SlackHttpClient {
 
-    String WEBHOOK = "https://hooks.slack.com/services/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";
+    String WEBHOOK = "https://hooks.slack.com/services/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";
 
     public void send(String message) {
         try {
